@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-adibro-reusable-autocomplete": [
+        "dist/ngx-adibro-reusable-autocomplete"
+      ],
+      "ngx-adibro-reusable-autocomplete/*": [
+        "dist/ngx-adibro-reusable-autocomplete/*"
+      ]
+    }
   }
 }

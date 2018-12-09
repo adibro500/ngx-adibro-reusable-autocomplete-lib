@@ -1,27 +1,79 @@
-# NgxAdibroReusableAutocompleteLib
+# ngx-adibro-autocomplete for Angular 7+
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+This is an angular component for autocomplete.
 
-## Development server
+# For demos please visit
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[demos](abhorrent-measure.surge.sh)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm install --save ngx-adibro-autocomplete
+```
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Inside app.module file import the module:
 
-## Running unit tests
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { FormsModule } from '@angular/forms';
+import { NgxAdibroAutocompleteModule } from 'ngx-adibro-autocomplete';
 
-## Running end-to-end tests
+@NgModule({
+  declarations: [
+      ...
+  ],
+  imports: [
+    ... ,
+    BrowserModule,
+    FormsModule,
+    NgxAdibroAutocompleteModule,
+    ...
+  ],
+  providers: [ ... ],
+  bootstrap: [...]
+})
+export class AppModule { }
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### In your HTML file you can do:
+
+```
+<ngx-adibro-reusable-autocomplete
+  [items]="items"
+  [(ngModel)]="myval"
+  (ngModelChange) = "changedVal($event)"
+  placeholder="placeholder"
+></ngx-adibro-reusable-autocomplete
+>
+
+```
+### In your TS file:
+```
+myval: any;
+  public items = [
+        "Eve",
+        "Charles",
+        "Tracey",
+            ...
+    ]
+
+  changedVal($event){
+    console.log($event);
+
+  }
+```
+
+### We support:
+1. items must be an array of strings
+2. currently only strings are supported
+
+## That's it
+
+Have fun !!!
